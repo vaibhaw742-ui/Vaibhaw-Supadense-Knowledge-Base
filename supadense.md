@@ -4,16 +4,23 @@
 
 ## Learning Intent
 
-<!-- Filled during onboarding -->
+Stay up to date with AI/ML developments
 
 ## Goals
 
-<!-- Filled during onboarding -->
+- Build production AI systems
 
 ## Focus Areas
 
-<!-- Categories and depth prefs filled during onboarding -->
+- 🤖 **Agents** _(deep)_
+- 🔍 **RAG** _(deep)_
+- ⚡ **LLM Inference** _(working)_
+- 🧠 **LLM Training** _(working)_
+- **AI Tools** _(working)_
+  Useful AI tools, libraries, and platforms for building and using AI systems.
+- **AI Research Papers** _(working)_
+  AI research papers, publications, and academic insights.
 
-## Trusted Sources
+---
 
-<!-- Filled during onboarding -->
+_Updated: 2026-05-02_
