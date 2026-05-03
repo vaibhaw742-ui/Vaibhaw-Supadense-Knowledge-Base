@@ -10,7 +10,7 @@
 
 ### [1] Context & Memory Management
 
-_Techniques for managing agent context windows, memory architectures, and preventing context pollution through layered protections, truncation strategies, and intermediary provider patterns._
+_Techniques for managing agent context windows, memory architectures, and preventing context pollution through layered protections, truncation strategies, intermediary provider patterns, and filesystem-based memory._
 
 <details>
 <summary>Key Concept 1 — Context Management in Agent Harnesses</summary>
@@ -67,48 +67,9 @@ _Techniques for managing agent context windows, memory architectures, and preven
 
 </details>
 
-### [2] Agent Runtime & Systems Engineering
+### [2] Self-Healing & Self-Improving Agents
 
-_The infrastructure layer that wraps agentic models — compute substrates, filesystems, tools, network boundaries, state models, lifecycle controllers — and the systems engineering discipline that ensures all agent components work coherently together._
-
-<details>
-<summary>Key Concept 1 — Hidden Technical Debt of AI Systems: Agent Runtime</summary>
-
-An agent runtime is the execution environment that wraps an agentic model, enabling it to take actions, observe effects, and feed observations back into subsequent calls. It consists of six components:
-
-- **Compute substrate** — container, microVM, or full VM where agent code runs
-- **Filesystem** — read/write access with snapshot and rollback semantics
-- **Tools** — shell, code interpreter, browser, file editor, MCP servers exposed as callable interfaces
-- **Network boundary** — defines what the agent can reach and what can reach it
-- **State model** — decides what persists across turns, episodes, and users
-- **Lifecycle controller** — starts, suspends, snapshots, resumes, and tears down environments
-
-The agent is not the model — it's the harness plus the model running inside the runtime. This runtime layer determines whether an agent finishes a task in 8 seconds or 8 minutes, whether multi-tenant environments are safe, and whether malicious prompts can access secrets. Most teams accumulate hidden technical debt by renting this layer, gluing cloud primitives together, or not considering it at all.
-
-> [Source](https://leehanchung.github.io/blogs/2026/04/24/hidden-technical-debt-agent-runtime/)
-
-</details>
-
-<details>
-<summary>Key Concept 2 — Systems Engineering: Building Agentic Software That Works</summary>
-
-- **Systems Engineering for Agents** — A discipline focused on optimizing how components interact rather than optimizing individual components in isolation. Applied to agentic software, it ensures the five layers (agent, data, security, interface, infrastructure) work together as a coherent system.
-
-- **Agent Engineering** — The layer defining agent logic and execution flow: model selection, system instructions, tool configurations, handoffs, context management, and observability. Behavior should be deterministic where possible and observable where it isn't.
-
-- **Interface Engineering** — Ensuring auth, policies, and access controls hold consistently across every surface an agent is reachable from (REST API, Slack, MCP server, terminal). Each surface has its own identity system that must map to the product's user identity.
-
-- **Action Approval Tiers** — A security pattern where agent actions are categorized by risk: reads run freely, writes need user approval, sensitive operations need admin sign-off. All actions should be logged and queryable for the product's lifetime.
-
-- **Six Layers of Grounded Context** — A pattern for providing agents with rich context: (1) table metadata, (2) human annotations, (3) query patterns, (4) institutional knowledge, (5) learnings from error patterns, (6) runtime context. This prevents raw LLMs from hitting walls with meaningless schemas.
-
-> [Source](https://x.com/ashpreetbedi/status/2041568919085854847)
-
-</details>
-
-### [3] Self-Healing & Self-Improving Agents
-
-_Production systems where agents evaluate, triage, and fix their own failures, or maintain their skill catalogs through lifecycle management to prevent drift and context rot._
+_Production systems where agents evaluate, triage, and fix their own failures through closed-loop grading pipelines, or maintain their skill catalogs through lifecycle management to prevent drift and context rot._
 
 <details>
 <summary>Key Concept 1 — The Self-Healing Agent Harness</summary>
@@ -141,28 +102,30 @@ _Production systems where agents evaluate, triage, and fix their own failures, o
 
 </details>
 
-### [4] Multi-Agent Systems & Specialized Agents
+### [3] Agent Runtime & Infrastructure
 
-_Architectures where multiple specialized agents (Leader, Analyst, Engineer) collaborate with distinct roles, tool access, and knowledge systems to solve complex data tasks._
+_The infrastructure layer that wraps agentic models — compute substrates, filesystems, tools, network boundaries, state models, lifecycle controllers — and the evolution of databases from passive storage to active execution environments for AI agents._
 
 <details>
-<summary>Key Concept 1 — Dash v2: The Multi-Agent Data System Every Company Needs</summary>
+<summary>Key Concept 1 — Hidden Technical Debt of AI Systems: Agent Runtime</summary>
 
-- **Dash v2** — A self-learning multi-agent data system composed of three specialized agents (Leader, Analyst, Engineer) that collaboratively answer data questions, learn from corrections, and automatically build analytics infrastructure (views, summary tables) for repeated queries.
-- **Leader Agent** — Routes requests and synthesizes answers. Has no SQL tools and cannot touch the database. Detects repeated question patterns and triggers the Engineer to build optimized views.
-- **Analyst Agent** — Read-only agent that writes and runs SQL queries. Uses PgVector-backed knowledge base to find validated queries and business context before writing new SQL. Enforces read-only at the PostgreSQL level (`default_transaction_read_only=on`).
-- **Engineer Agent** — Can write to the `dash` schema only (enforced by SQLAlchemy event listener blocking `public` schema writes). Builds views, summary tables, and computed data. Records created infrastructure to the knowledge base for future reuse.
-- **Dual-tier knowledge system** — Dash separates curated **knowledge** (table metadata, validated queries, business rules) from automatically captured **learnings** (fixes, corrections, discovered quirks). The Analyst checks both before writing SQL.
-- **Schema separation** — `public` schema holds company data (read-only for agents), `dash` schema holds agent-built analytics infrastructure, `ai` schema stores Dash's operational data (sessions, learnings, knowledge vectors).
+An agent runtime is the execution environment that wraps an agentic model, enabling it to take actions, observe effects, and feed observations back into subsequent calls. It consists of six components:
 
-> [Source](https://x.com/ashpreetbedi/status/2041901460523270409)
+- **Compute substrate** — container, microVM, or full VM where agent code runs
+- **Filesystem** — read/write access with snapshot and rollback semantics
+- **Tools** — shell, code interpreter, browser, file editor, MCP servers exposed as callable interfaces
+- **Network boundary** — defines what the agent can reach and what can reach it
+- **State model** — decides what persists across turns, episodes, and users
+- **Lifecycle controller** — starts, suspends, snapshots, resumes, and tears down environments
+
+The agent is not the model — it's the harness plus the model running inside the runtime. This runtime layer determines whether an agent finishes a task in 8 seconds or 8 minutes, whether multi-tenant environments are safe, and whether malicious prompts can access secrets. Most teams accumulate hidden technical debt by renting this layer, gluing cloud primitives together, or not considering it at all.
+
+> [Source](https://leehanchung.github.io/blogs/2026/04/24/hidden-technical-debt-agent-runtime/)
 
 </details>
 
-### Ungrouped
-
 <details>
-<summary>Key Concept 1 — The Database Is No Longer Storage - It Is Becoming the Runtime for AI</summary>
+<summary>Key Concept 2 — The Database Is No Longer Storage - It Is Becoming the Runtime for AI</summary>
 
 - **Database as Runtime** — The evolution of databases from passive storage layers to active execution environments that provide memory, coordination, state management, and computation for AI agents. The database becomes part of the runtime rather than just persistence.
 
@@ -175,6 +138,45 @@ _Architectures where multiple specialized agents (Leader, Analyst, Engineer) col
 - **Machine-Generated Database Traffic** — The prediction that most future database traffic will not come from humans directly but from machines (agents) acting on behalf of humans, requiring different infrastructure design points around elastic compute, isolation, and economics.
 
 > [Source](https://x.com/siddontang/status/2050409724949270783)
+
+</details>
+
+### [4] Systems Engineering & Agent Architecture
+
+_Systems engineering disciplines, security patterns, and contextual grounding techniques that ensure agent components work coherently together across interfaces, data layers, and infrastructure._
+
+<details>
+<summary>Key Concept 1 — Systems Engineering: Building Agentic Software That Works</summary>
+
+- **Systems Engineering for Agents** — A discipline focused on optimizing how components interact rather than optimizing individual components in isolation. Applied to agentic software, it ensures the five layers (agent, data, security, interface, infrastructure) work together as a coherent system.
+
+- **Agent Engineering** — The layer defining agent logic and execution flow: model selection, system instructions, tool configurations, handoffs, context management, and observability. Behavior should be deterministic where possible and observable where it isn't.
+
+- **Interface Engineering** — Ensuring auth, policies, and access controls hold consistently across every surface an agent is reachable from (REST API, Slack, MCP server, terminal). Each surface has its own identity system that must map to the product's user identity.
+
+- **Action Approval Tiers** — A security pattern where agent actions are categorized by risk: reads run freely, writes need user approval, sensitive operations need admin sign-off. All actions should be logged and queryable for the product's lifetime.
+
+- **Six Layers of Grounded Context** — A pattern for providing agents with rich context: (1) table metadata, (2) human annotations, (3) query patterns, (4) institutional knowledge, (5) learnings from error patterns, (6) runtime context. This prevents raw LLMs from hitting walls with meaningless schemas.
+
+> [Source](https://x.com/ashpreetbedi/status/2041568919085854847)
+
+</details>
+
+### [5] Multi-Agent Systems & Coding Agent Patterns
+
+_Architectures where multiple specialized agents collaborate with distinct roles, tool access, and knowledge systems, and techniques for using coding agents' native tool proficiency and filesystem familiarity for long-context processing._
+
+<details>
+<summary>Key Concept 1 — Dash v2: The Multi-Agent Data System Every Company Needs</summary>
+
+- **Dash v2** — A self-learning multi-agent data system composed of three specialized agents (Leader, Analyst, Engineer) that collaboratively answer data questions, learn from corrections, and automatically build analytics infrastructure (views, summary tables) for repeated queries.
+- **Leader Agent** — Routes requests and synthesizes answers. Has no SQL tools and cannot touch the database. Detects repeated question patterns and triggers the Engineer to build optimized views.
+- **Analyst Agent** — Read-only agent that writes and runs SQL queries. Uses PgVector-backed knowledge base to find validated queries and business context before writing new SQL. Enforces read-only at the PostgreSQL level (`default_transaction_read_only=on`).
+- **Engineer Agent** — Can write to the `dash` schema only (enforced by SQLAlchemy event listener blocking `public` schema writes). Builds views, summary tables, and computed data. Records created infrastructure to the knowledge base for future reuse.
+- **Dual-tier knowledge system** — Dash separates curated **knowledge** (table metadata, validated queries, business rules) from automatically captured **learnings** (fixes, corrections, discovered quirks). The Analyst checks both before writing SQL.
+- **Schema separation** — `public` schema holds company data (read-only for agents), `dash` schema holds agent-built analytics infrastructure, `ai` schema stores Dash's operational data (sessions, learnings, knowledge vectors).
+
+> [Source](https://x.com/ashpreetbedi/status/2041901460523270409)
 
 </details>
 
