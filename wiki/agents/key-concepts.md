@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 9
+**Resources:** 10
 
 ## Key Concepts
 
@@ -175,6 +175,21 @@ _Architectures where multiple specialized agents (Leader, Analyst, Engineer) col
 - **Machine-Generated Database Traffic** — The prediction that most future database traffic will not come from humans directly but from machines (agents) acting on behalf of humans, requiring different infrastructure design points around elastic compute, isolation, and economics.
 
 > [Source](https://x.com/siddontang/status/2050409724949270783)
+
+</details>
+
+<details>
+<summary>Key Concept 2 — Building file system transactions for agents</summary>
+
+- **Unit of atomicity** — Granularity at which storage operations are guaranteed to be fully committed or fully rolled back. S3 provides per-object atomicity; traditional file systems use `fsync` as a write barrier; agents require task/turn-level atomicity spanning multiple files and systems.
+- **fsync** — File system write barrier operation that durably commits all prior writes to disk. Does not cover entire multi-step agent workflows, leading to potential partial writes on crash.
+- **Agent task atomicity** — Storage semantic where all side effects of an agent's single task/turn are fully committed or fully rolled back. Ensures no intermediate states (partial writes, empty files) are visible to other agents or on restart.
+- **File system checkpoint** — Copy-on-write snapshot of a file system taken before and after an agent turn. Enables low-cost rollback to pre-task state if errors occur, scales to terabytes/petabytes of data.
+- **File system branching** — Primitive allowing agents to create isolated copies of a shared file system for task exploration. Lets agents test multiple approaches without overwriting production data.
+- **Bash-as-transaction** — Pattern treating each bash tool execution as a database transaction for agent-file system interaction. Enables conflict resolution and atomic acceptance/rejection of changes to the main file system.
+- **Git-based file-system** — Workaround using Git semantics (e.g., Cloudflare Artifacts) to achieve atomic commits of multiple file changes, but not scalable for large datasets.
+
+> [Source](https://x.com/jhleath/status/2050267447522177215)
 
 </details>
 

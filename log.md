@@ -4,6 +4,9 @@
 
 ## 2026-05-03
 
+- **05:36** Placed file system transaction concepts for agents into Agents Key Concepts page (1 placement, 7 concepts extracted)
+- **05:34** Placed agent file system transaction concepts into Agents Key Concepts page, added 6 new domain concepts
+- **05:30** Resource created (url): Building file system transactions for agents
 - **04:44** Placed content from "The Database Is No Longer Storage - It Is Becoming the Runtime for AI" into Agents Key Concepts and AI Tools Key Concepts. Extracted 4 new concepts: Database as Runtime, Agent Workload Patterns, State-Centric Architecture, Object-Storage-Native Persistence.
 - **04:42** Resource created (url): The Database Is No Longer Storage - It Is Becoming the Runtime for AI
 
