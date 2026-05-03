@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 3
+**Resources:** 4
 
 ## Key Concepts
 
@@ -43,6 +43,21 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 </details>
 
+<details>
+<summary>Key Concept 4 — The Database Is No Longer Storage - It Is Becoming the Runtime for AI</summary>
+
+- **Object-Storage-Native Persistence** — A database architecture pattern where object storage (like S3) serves as the primary persistence layer rather than traditional block storage or local disks. Enables better elasticity and separation of storage/compute for agent workloads.
+
+- **Elastic Compute for Databases** — The ability to dynamically scale database compute resources up and down to handle bursty, unpredictable agent-generated workloads, as opposed to provisioning for steady-state human traffic.
+
+- **Unified Transactional and Analytical Workloads (HTAP)** — Database systems that can handle both OLTP (transactional) and OLAP (analytical) patterns simultaneously, which is essential for agent systems that mix state updates with context queries in the same interaction loop.
+
+- **Usage-Based Pricing for Database Infrastructure** — Economic models for database services that align with agent workloads, where machines are the main users generating variable, spikey traffic patterns rather than predictable per-seat human pricing.
+
+> [Source](https://x.com/siddontang/status/2050409724949270783)
+
+</details>
+
 ---
 
-_Built: 2026-05-02_
+_Built: 2026-05-03_

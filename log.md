@@ -2,6 +2,11 @@
 
 > This file is managed by the supadense agent. Edit via chat only.
 
+## 2026-05-03
+
+- **04:44** Placed content from "The Database Is No Longer Storage - It Is Becoming the Runtime for AI" into Agents Key Concepts and AI Tools Key Concepts. Extracted 4 new concepts: Database as Runtime, Agent Workload Patterns, State-Centric Architecture, Object-Storage-Native Persistence.
+- **04:42** Resource created (url): The Database Is No Longer Storage - It Is Becoming the Runtime for AI
+
 ## 2026-05-02
 
 - **09:53** Placed content to AI Research Papers Key Concepts from "On SFT, RL, and on-policy distillation" (2 total placements across LLM Training and AI Research Papers)
