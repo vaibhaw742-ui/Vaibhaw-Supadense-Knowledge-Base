@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 10
+**Resources:** 11
 
 ## Key Concepts
 
@@ -190,6 +190,18 @@ _Architectures where multiple specialized agents (Leader, Analyst, Engineer) col
 - **Git-based file-system** — Workaround using Git semantics (e.g., Cloudflare Artifacts) to achieve atomic commits of multiple file changes, but not scalable for large datasets.
 
 > [Source](https://x.com/jhleath/status/2050267447522177215)
+
+</details>
+
+<details>
+<summary>Key Concept 3 — Coding Agents are Effective Long-Context Processors</summary>
+
+- **Coding Agent Long-Context Processing**: Framing long-context text processing as file system navigation and manipulation delegated to off-the-shelf coding agents, replacing latent attention or fixed RAG retrieval.
+- **Native Tool Proficiency**: Coding agents' capability to use executable code, terminal commands (grep, head), and file manipulation tools for precise, programmatic text processing instead of passive natural-language queries.
+- **File System Familiarity**: Inductive prior from coding agents' training on large, hierarchical code repositories, enabling efficient navigation of text corpora structured as directory trees.
+- **Emergent Processing Strategies**: Uninstructed, task-specific processing approaches autonomously developed by coding agents—including iterative query refinement for multi-hop retrieval, programmatic aggregation for analytical tasks, and hybrid strategies for reading comprehension.
+
+> [Source](https://arxiv.org/html/2603.20432v1)
 
 </details>
 

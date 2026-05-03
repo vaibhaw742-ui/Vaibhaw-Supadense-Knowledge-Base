@@ -4,7 +4,7 @@
 
 **Depth:** working
 
-**Resources:** 1
+**Resources:** 2
 
 ## Key Concepts
 
@@ -20,6 +20,16 @@ Key serving infrastructure considerations for agent workloads:
 - **Firecracker microVMs** are the de facto industry primitive for serving untrusted agent code at high density (~125ms boot, ~5MB VMM overhead, dedicated kernel per VM)
 
 > [Source](https://leehanchung.github.io/blogs/2026/04/24/hidden-technical-debt-agent-runtime/)
+
+</details>
+
+<details>
+<summary>Key Concept 2 — Coding Agents are Effective Long-Context Processors</summary>
+
+- **Long-Context Access vs Processing Gap**: LLMs can scale to access massive contexts (up to millions of tokens) via expanded context windows, but fail to effectively process long context, with performance degrading as context length increases (context rot).
+- **Externalized Long-Context Processing**: Moving long-context processing from latent, uninterpretable attention mechanisms to explicit, executable interactions via coding agents, improving both performance and interpretability.
+
+> [Source](https://arxiv.org/html/2603.20432v1)
 
 </details>
 

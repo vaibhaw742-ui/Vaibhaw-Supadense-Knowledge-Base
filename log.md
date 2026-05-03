@@ -4,6 +4,16 @@
 
 ## 2026-05-03
 
+- **08:46** Processed Raul Junco’s Post (payment retries) — no relevant AI/ML content found for existing wiki categories; 0 placements made
+- **08:45** Resource created (linkedin): Raul Junco’s Post
+- **08:33** Final wiki rebuild after processing 'Coding Agents are Effective Long-Context Processors' - placed in 6 Key Concepts sections, upserted 7 concepts across Agents, RAG, LLM Inference, AI Research Papers, and AI Tools categories.
+- **08:32** Upserted 7 domain-specific concepts from 'Coding Agents are Effective Long-Context Processors' paper after fixing FOREIGN KEY issues.
+- **08:32** Memorized resource 'Coding Agents are Effective Long-Context Processors' into 4 Key Concepts sections (Agents, RAG, LLM Inference, AI Research Papers); upserted 7 new domain-specific concepts; rebuilt all affected wiki pages.
+- **08:30** Removed resource "Coding Agents are Effective Long-Context Processors" — 0 placements removed, no pages rebuilt
+- **08:30** Resource created (url): Coding Agents are Effective Long-Context Processors
+- **08:29** Resource created (url): Coding Agents are Effective Long-Context Processors
+- **08:28** Removed resource "https://arxiv.org/pdf/2603.20432" — 0 placements removed, no pages rebuilt
+- **08:28** Resource created (pdf): https://arxiv.org/pdf/2603.20432
 - **05:36** Placed file system transaction concepts for agents into Agents Key Concepts page (1 placement, 7 concepts extracted)
 - **05:34** Placed agent file system transaction concepts into Agents Key Concepts page, added 6 new domain concepts
 - **05:30** Resource created (url): Building file system transactions for agents

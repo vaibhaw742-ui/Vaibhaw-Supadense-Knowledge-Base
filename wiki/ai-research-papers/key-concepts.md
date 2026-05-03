@@ -6,7 +6,7 @@ AI research papers, publications, and academic insights.
 
 **Depth:** working
 
-**Resources:** 1
+**Resources:** 2
 
 ## Key Concepts
 
@@ -24,6 +24,16 @@ AI research papers, publications, and academic insights.
 - **Exposure Bias in Off-Policy SFT**: Training on teacher's state distribution while evaluating on student's own distribution creates a gap that caps practical performance below teacher level on long rollouts. On-policy methods (OPD, RL) avoid this.
 
 > [Source](https://x.com/willccbb/status/2050038277454143918)
+
+</details>
+
+<details>
+<summary>Key Concept 2 — Coding Agents are Effective Long-Context Processors</summary>
+
+- **Text Processing as File System Operation**: Methodology of structuring text corpora as directory hierarchies and delegating processing to coding agents with full autonomy over exploration and manipulation strategies.
+- **Corpus Formatting for Coding Agents**: For corpora >100M tokens: each document as individual txt file in a directory; for prohibitively large corpora (e.g., Natural Questions): single JSONL file; for single long documents: single txt file.
+
+> [Source](https://arxiv.org/html/2603.20432v1)
 
 </details>
 

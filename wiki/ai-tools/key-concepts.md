@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 4
+**Resources:** 5
 
 ## Key Concepts
 
@@ -55,6 +55,16 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 - **Usage-Based Pricing for Database Infrastructure** — Economic models for database services that align with agent workloads, where machines are the main users generating variable, spikey traffic patterns rather than predictable per-seat human pricing.
 
 > [Source](https://x.com/siddontang/status/2050409724949270783)
+
+</details>
+
+<details>
+<summary>Key Concept 5 — Coding Agents are Effective Long-Context Processors</summary>
+
+- **Coding Agent Long-Context Processing**: Framing long-context text processing tasks as file system navigation and manipulation delegated to off-the-shelf coding agents (e.g., Codex), replacing latent attention or fixed RAG retrieval.
+- **Text Processing as File System Operation**: Methodology of structuring text corpora as directory hierarchies (individual txt files, JSONL, or single txt) and delegating processing to coding agents with full autonomy over exploration strategies.
+
+> [Source](https://arxiv.org/html/2603.20432v1)
 
 </details>
 
