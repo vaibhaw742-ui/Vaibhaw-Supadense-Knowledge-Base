@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 14
+**Resources:** 15
 
 ## Key Concepts
 
@@ -244,6 +244,19 @@ _Architectures where multiple specialized agents collaborate with distinct roles
 - **Outcome-oriented engineering**: Development paradigm where humans define desired outcomes (e.g., approved specs) and agents execute tasks independently, shifting human role from task execution to outcome validation.
 
 > [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
+<details>
+<summary>Key Concept 4 — Recursive Agent Optimization Actually Works</summary>
+
+- **Recursive Agent Optimization** — Paradigm for building agent harnesses that autonomously fix bugs and improve over time by analyzing execution traces, diagnosing failures via specialized language models, and iteratively applying fixes through a coding agent.
+- **HALO (Hierarchical Agent Loop Optimization)** — Methodology for recursively self-improving agent harnesses, following a 5-step loop: (1) collect harness traces, (2) feed traces to specialized Recursive Language Model (HALO-Engine) for diagnosis, (3) use coding agent to propose fixes based on diagnosis, (4) redeploy harness, (5) repeat with new traces.
+- **HALO-Engine** — Specialized Recursive Language Model (RLM) and harness optimized to analyze arbitrarily large agent trace datasets, identifying failure patterns (e.g., tool not found errors, hallucination risks) better than general-purpose coding harnesses like Claude Code.
+- **Recursive Language Model (RLM)** — A language model designed to process and diagnose agent execution traces, enabling "birds-eye view" analysis of repeated failures, tool call errors, and hallucination patterns that are intractable for manual review.
+- **AppWorld** — Agent benchmark consisting of nine simulated apps (Spotify, Splitwise, Gmail, Venmo, file system, phone, etc.) with 457 APIs across 728 tasks, evaluated on Task Goal Completion (TGC) and stricter Scenario Goal Completion (SGC) metrics.
+
+> [Source](https://x.com/AmarSVS/status/2051470760947159197)
 
 </details>
 

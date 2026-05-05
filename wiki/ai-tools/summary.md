@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 4
+**Resources:** 5
 
 ## Key Concepts
 
@@ -52,6 +52,17 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 </details>
 
+<details>
+<summary>Key Concept 5 — Recursive Agent Optimization Actually Works</summary>
+
+- **HALO (Hierarchical Agent Loop Optimization)** — Open-source, recursively self-improving agent harness methodology that improved AppWorld scenario completion rate from 73.7 to 89.5 in 5 optimization cycles.
+- **HALO-Engine** — Specialized RLM at the core of HALO, outperforming off-the-shelf RLMs and coding agents like Claude Code for trace diagnosis tasks.
+- **Recursive Agent Optimization** — Validated paradigm where AI systems improve other AI systems, with diagnostic value comparable to an athlete reviewing game footage post-match.
+
+> [Source](https://x.com/AmarSVS/status/2051470760947159197)
+
+</details>
+
 ---
 
-_Built: 2026-05-04_
+_Built: 2026-05-05_

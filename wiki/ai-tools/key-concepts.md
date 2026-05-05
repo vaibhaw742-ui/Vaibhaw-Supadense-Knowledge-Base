@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 7
+**Resources:** 8
 
 ## Key Concepts
 
@@ -89,6 +89,17 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 - **Model-agnostic agentic system**: Agentic tooling that supports multiple LLM providers, avoiding vendor lock-in, and enabling cost optimization by matching tasks to the most appropriate model for the job.
 
 > [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
+<details>
+<summary>Key Concept 8 — Recursive Agent Optimization Actually Works</summary>
+
+- **HALO (Hierarchical Agent Loop Optimization)** — Open-source toolset and methodology for recursively optimizing agent harnesses, including the HALO-Engine (specialized RLM), CLI, and pre-built demos (e.g., AppWorld integration).
+- **HALO-Engine** — Specialized Recursive Language Model (RLM) powering HALO, available as an open-source engine or hosted service via Catalyst, capable of analyzing large agent trace datasets to diagnose failures.
+- **Recursive Agent Optimization** — Tool-driven paradigm for agent harness improvement, automating trace analysis, failure diagnosis, and fix proposal to reduce reliance on manual debugging or custom benchmarks.
+
+> [Source](https://x.com/AmarSVS/status/2051470760947159197)
 
 </details>
 
