@@ -2,8 +2,22 @@
 
 > This file is managed by the supadense agent. Edit via chat only.
 
+## 2026-05-05
+
+- **11:18** Processed Augment Cosmos announcement: placed content into Agents Key Concepts, AI Tools Key Concepts, LLM Inference Key Concepts. Upserted 6 new concepts related to agentic SDLC, model routing, and Augment's tooling.
+- **11:16** Resource created (url): We don't need more agents. We need a better system. So we built one.
+- **10:56** Placed horse carriage analogy and AI agent operator reframing concepts from Kangwook Lee tweet (Horses, Harnesses, and AI Agents) into Agents Key Concepts section.
+- **10:54** Resource created (url): Horses, Harnesses, and AI Agents
+
+## 2026-05-04
+
+- **07:36** Upserted 5 domain-specific concepts related to swarm management and agent tools.
+- **07:34** Memorized 'Swarm Management of Agent Harnesses' (resource ID 01KQRYBSYQVM8SHKP3PQ6E6ZAM): placed 3 content chunks into Agents Key Concepts (2) and AI Tools Key Concepts (1), upserted 8 domain-specific concepts, rebuilt 2 wiki pages.
+- **07:31** Resource created (url): Swarm Management of Agent Harnesses
+
 ## 2026-05-03
 
+- **13:03** Added category: Traditional ML
 - **08:46** Processed Raul Junco’s Post (payment retries) — no relevant AI/ML content found for existing wiki categories; 0 placements made
 - **08:45** Resource created (linkedin): Raul Junco’s Post
 - **08:33** Final wiki rebuild after processing 'Coding Agents are Effective Long-Context Processors' - placed in 6 Key Concepts sections, upserted 7 concepts across Agents, RAG, LLM Inference, AI Research Papers, and AI Tools categories.

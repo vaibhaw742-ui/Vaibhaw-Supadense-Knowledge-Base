@@ -4,7 +4,7 @@
 
 **Depth:** working
 
-**Resources:** 2
+**Resources:** 3
 
 ## Key Concepts
 
@@ -33,6 +33,16 @@ Key serving infrastructure considerations for agent workloads:
 
 </details>
 
+<details>
+<summary>Key Concept 3 — We don't need more agents. We need a better system. So we built one.</summary>
+
+- **Model routing**: Process of dynamically selecting the most appropriate LLM for a given task based on cost, quality, and task requirements, to minimize token usage and operational cost without sacrificing output quality.
+- **Multi-model inference**: Using multiple LLM providers/models in a single workflow, optimizing for cost and performance by routing tasks to the best-fit model rather than defaulting to a single frontier model for all tasks.
+
+> [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
 ---
 
-_Built: 2026-05-03_
+_Built: 2026-05-05_

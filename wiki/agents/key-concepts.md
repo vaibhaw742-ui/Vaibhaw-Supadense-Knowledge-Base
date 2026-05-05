@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 11
+**Resources:** 14
 
 ## Key Concepts
 
@@ -207,6 +207,46 @@ _Architectures where multiple specialized agents collaborate with distinct roles
 
 </details>
 
+### Ungrouped
+
+<details>
+<summary>Key Concept 1 — Swarm Management of Agent Harnesses</summary>
+
+- **Swarm Management** — The practice of managing fleets of long-running agents, beyond single agent harnesses or simple delegation. Covers identity, lifecycle, completion routing, queueing, cancellation/steering, role enforcement, and recovery. Distinguished from delegation by focusing on owning many agents over time rather than single task splitting.
+- **Agent Harness** — A system enabling a single agent to call tools, read files, run commands, and maintain an execution loop. Core feature is a loop over tools, forming the base layer for agent execution.
+- **Delegation Primitive** — A tool allowing one agent to spawn subagents (workers) for task splitting, e.g., Hermes' `delegate_task`. Child agents live within the parent tool call, bounded by the parent's execution stack; does not support decoupled lifecycles.
+- **Swarm Manager** — A runtime layer above agent harnesses that manages a fleet of running agent harnesses, ensuring progress, handling lifecycle events, and owning the agent graph. Core feature is a loop over running harnesses rather than tools.
+- **Agent Identity (Swarm Context)** — Unique identifiers for agents in a swarm, including session keys (e.g., `agent:<targetAgentId>:subagent:<uuid>`) and run IDs. Enables addressing, listing, patching, deletion, and parent-child lineage tracking; requires both session keys (where the agent lives) and run IDs (current execution).
+- **Push-Based Completion** — A routing model for agent task completion where results are delivered via events to the requester session, rather than as a return value. Supports decoupled parent/child lifecycles where parents may be active, idle, restarted, or absent.
+
+> [Source](https://x.com/aparnadhinak/status/2051014879449157952)
+
+</details>
+
+<details>
+<summary>Key Concept 2 — Horses, Harnesses, and AI Agents</summary>
+
+- **Horse Carriage Analogy for AI Agents**: Reframes AI agents by comparing them to horse-drawn carriages: just as horses (stronger than humans at pulling) replaced humans as cart pullers via a harness that allows steering, LLMs (stronger than humans at many cognitive operations) replace humans as computer operators via a harness (integration layer) that allows human steering.
+- **AI Agent Operator Reframing**: Rejects the conventional "AI is given the power to use tools" framing. Posits that computers/tools are the inherently powerful infrastructure, and AI agents are the new operators of that infrastructure, delivering far greater speed, scale, and persistence than human operation.
+- **LLM Cognitive Strengths for Agentic Use**: LLMs outperform humans at core agentic cognitive operations including reading, writing, planning, translating intent into actionable steps, and working across diverse interfaces.
+
+> [Source](https://x.com/Kangwook_Lee/status/2051296616989315118)
+
+</details>
+
+<details>
+<summary>Key Concept 3 — We don't need more agents. We need a better system. So we built one.</summary>
+
+- **Agentic SDLC**: Software development lifecycle where agents handle end-to-end tasks (specification, coding, testing, review) across all stages, with humans providing steering only at critical checkpoints.
+- **Self-improving agent loops**: Agent systems that retain memory of feedback, interactions, and learned patterns, improving performance on scoped tasks over time through continuous learning.
+- **Shared agent context**: Team-wide shared memory and context for agents, eliminating fragmented individual workflows and trapping expertise in single-user configurations.
+- **Deep code review**: Code review process optimized for agent reviewers, prioritizing recall (catching all potential issues) over precision (surfacing only high-importance issues), as agents can process high volumes without human time constraints.
+- **Outcome-oriented engineering**: Development paradigm where humans define desired outcomes (e.g., approved specs) and agents execute tasks independently, shifting human role from task execution to outcome validation.
+
+> [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
 ---
 
-_Built: 2026-05-03_
+_Built: 2026-05-05_

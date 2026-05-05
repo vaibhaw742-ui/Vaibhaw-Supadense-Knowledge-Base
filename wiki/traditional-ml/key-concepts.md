@@ -1,9 +1,15 @@
-# Key Concepts
+# Traditional ML
 
-> This file is maintained by Supadense. Do not edit directly.
+> This file is managed by the supadense agent. Edit via chat only.
 
-Core concepts for Traditional Ml.
+Classical machine learning algorithms and techniques before the deep learning era.
+
+**Depth:** working
 
 ## Key Concepts
 
-_No content yet — add resources to fill this in._
+_No content yet._
+
+---
+
+_Built: 2026-05-04_

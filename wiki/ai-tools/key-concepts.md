@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 5
+**Resources:** 7
 
 ## Key Concepts
 
@@ -68,6 +68,30 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 </details>
 
+<details>
+<summary>Key Concept 6 — Swarm Management of Agent Harnesses</summary>
+
+- **OpenClaw** — AI agent runtime with production-grade swarm management: durable subagent session keys, run IDs, lifecycle records, parent-child lineage, cleanup policy, push-based `task_completion` events, queue policy enforcement, steering/cascade cancellation, role-based access control, subagent registry, and background sweeper for recovery.
+- **Hermes** — AI agent framework with `delegate_task` primitive: spawns child AIAgent instances, runs them in parallel, streams progress, applies timeouts, interrupts them, and returns structured summaries to the parent. Children live within the parent tool call, lacking decoupled lifecycle management.
+- **Devin** — Cognition's AI agent system capable of managing other Devin instances, cited as an early example of multi-agent delegation.
+- **Anthropic Managed Agents** — Anthropic's implementation of managed agent runtimes, referenced as an example of external swarm management systems.
+- **Cursor Long-Running Agents** — Cursor's design for agents with extended execution windows, cited as an example of systems requiring swarm management for long-running tasks.
+
+> [Source](https://x.com/aparnadhinak/status/2051014879449157952)
+
+</details>
+
+<details>
+<summary>Key Concept 7 — We don't need more agents. We need a better system. So we built one.</summary>
+
+- **Augment Cosmos**: Public preview operating system for agentic software development, supporting agents running in local or cloud environments, with team-shared context, self-improving agent loops, multi-model support, and integrations to existing development tools.
+- **Prism**: Augment's model routing system that delivers ~20–30% token savings without sacrificing output quality, by dynamically selecting optimal models for tasks to balance cost and performance.
+- **Model-agnostic agentic system**: Agentic tooling that supports multiple LLM providers, avoiding vendor lock-in, and enabling cost optimization by matching tasks to the most appropriate model for the job.
+
+> [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
 ---
 
-_Built: 2026-05-03_
+_Built: 2026-05-05_

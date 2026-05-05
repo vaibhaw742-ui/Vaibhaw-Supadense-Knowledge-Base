@@ -22,6 +22,10 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 AI research papers, publications, and academic insights.
 
+### [Traditional ML](traditional-ml.md) _(working)_
+
+Classical machine learning algorithms and techniques before the deep learning era.
+
 ---
 
-_Built: 2026-05-03_
+_Built: 2026-05-04_

@@ -20,7 +20,9 @@ Stay up to date with AI/ML developments
   Useful AI tools, libraries, and platforms for building and using AI systems.
 - **AI Research Papers** _(working)_
   AI research papers, publications, and academic insights.
+- **Traditional ML** _(working)_
+  Classical machine learning algorithms and techniques before the deep learning era.
 
 ---
 
-_Updated: 2026-05-03_
+_Updated: 2026-05-04_
