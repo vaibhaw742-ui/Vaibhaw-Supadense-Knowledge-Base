@@ -4,6 +4,27 @@
 
 ## 2026-05-05
 
+- **17:01** Memorized resource 'Causal Masking in Attention' into LLM Training Key Concepts and LLM Inference Key Concepts sections. Extracted 4 new concepts: Causal Masking, Causal Mask Matrix, Attention Score Matrix, Information Leakage (Language Modeling).
+- **16:59** Resource created (url): Causal Masking in Attention
+- **16:54** Memorized "Boosting multimodal inference performance by >10% with a single Python dictionary" — placed key concepts in LLM Inference and AI Research Papers categories, added 2 new concepts (Host Overhead, CUDA IPC Pool Handle Cache)
+- **16:51** Resource created (url): Boosting multimodal inference performance by >10% with a single Python dictionary
+- **16:45** Memorized resource 'Building a Virtual Filesystem for Mintlify's AI Assistant' into Agents, RAG, and AI Tools key concepts sections. Added 4 new concepts: ChromaFs, just-bash, virtual filesystem for agents, coarse-to-fine grep optimization.
+- **16:36** Resource created (url): Building a Virtual Filesystem for Mintlify's AI Assistant
+- **16:36** Processed resource 'rl-environments-guide' (ID: 01KQWFTP80Z01ZSHRV1FK11SFH): no extractable content found, 0 placements made due to placeholder/loading state content
+- **16:34** Placed 4 subagent patterns and related concepts into Agents Key Concepts section. Upserted 4 new agent pattern concepts.
+- **16:34** Resource created (url): rl-environments-guide
+- **16:32** Memorized Hermes Kanban resource into Agents and AI Tools Key Concepts (3 placements), extracted 4 new domain-specific concepts, rebuilt Agents and AI Tools category wiki pages.
+- **16:32** Resource created (url): How Agents Manage Other Agents: Four Subagents Patterns in 2026
+- **16:31** Placed content from 'What I Use Hermes Agent For' into Agents Key Concepts (multi-agent crew, agent profiling, use case methodology), LLM Inference Key Concepts (consumer-grade local inference, multi-provider strategy), AI Tools Key Concepts (cost-optimized usage, local hosting, multi-provider config), and AI Tools Summary. Added concepts: Hermes Agent, Multi-agent Crew, Agent Profiling.
+- **16:31** Processed 'Mercury: The AI Agent We All Wanted' - placed content in AI Tools (key-concepts, summary) and Agents (key-concepts) pages. Added 3 new concepts: Mercury AI Agent, Four-file Soul System, Auto-Concise Mode.
+- **16:30** Resource created (url): Hermes Kanban Turns Multi-Agent Work Into a Real Board
+- **16:28** Resource created (url): Mercury: The AI Agent We All Wanted - Where Control, Permissions, and Autonomy Finally Got Real
+- **16:26** Resource created (url): What I Use Hermes Agent For (And How I Use It)
+- **12:39** Memorized 15 Hermes Agent features into Agents, AI Tools, and LLM Inference Key Concepts pages; upserted 9 domain-specific concepts including Persistent Agent Memory, Session Branching, and Auxiliary Model Routing.
+- **12:36** Resource created (url): 10 Principles for Agent-Native CLIs
+- **12:36** Resource created (url): 99% of Hermes Agent Users Have Never Touched These 15 Features
+- **12:32** Placed SOUL.md concepts into Agents Key Concepts: 7 concepts (SOUL.md, Autonomous Operator, Agent Pushback Rule, Agent Autonomy Boundary, Mission Map, Agent Accountability Loop, Dual Voice Mode) with 1 placement and 6 concept upserts
+- **12:29** Resource created (url): The 170-Line SOUL.md That Made My Hermes Agent Dangerous
 - **12:15** Processed resource 'Recursive Agent Optimization Actually Works' (ID: 01KQW0X3N2801SQXX70R9Y3BB0) into 3 wiki sections: Agents Key Concepts, AI Tools Key Concepts, AI Tools Summary Key Concepts. Extracted and upserted 5 domain-specific concepts: Recursive Agent Optimization, HALO, HALO-Engine, Recursive Language Model, AppWorld.
 - **12:13** Resource created (url): Recursive Agent Optimization Actually Works
 - **11:18** Processed Augment Cosmos announcement: placed content into Agents Key Concepts, AI Tools Key Concepts, LLM Inference Key Concepts. Upserted 6 new concepts related to agentic SDLC, model routing, and Augment's tooling.

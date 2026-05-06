@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 15
+**Resources:** 23
 
 ## Key Concepts
 
@@ -257,6 +257,117 @@ _Architectures where multiple specialized agents collaborate with distinct roles
 - **AppWorld** — Agent benchmark consisting of nine simulated apps (Spotify, Splitwise, Gmail, Venmo, file system, phone, etc.) with 457 APIs across 728 tasks, evaluated on Task Goal Completion (TGC) and stricter Scenario Goal Completion (SGC) metrics.
 
 > [Source](https://x.com/AmarSVS/status/2051470760947159197)
+
+</details>
+
+<details>
+<summary>Key Concept 5 — The 170-Line SOUL.md That Made My Hermes Agent Dangerous</summary>
+
+- **SOUL.md** — A markdown file that acts as an agent's operating contract, specifying identity, tone, pushback rules, autonomy boundaries, mission context, and accountability requirements to move beyond generic "helpful assistant" system prompts.
+- **Autonomous Operator** — An agent role defined as a proactive thought partner that surfaces opportunities, flags problems, and advances work without waiting for user orders, unlike passive assistant roles.
+- **Agent Pushback Rule** — A guideline requiring agents to disagree with users only when providing supporting evidence (data, examples, reasoning), avoiding both blind agreement ("expensive agreement") and unsubstantiated contrarianism.
+- **Agent Autonomy Boundary** — A simplified permission framework where agents can perform non-destructive, low-risk tasks (research, coding, planning) without approval, but require explicit sign-off for posting, publishing, purchasing, or irreversible changes.
+- **Mission Map** — A live, updated inventory of active/stale projects, priorities, and next actions embedded in an agent's operating contract, eliminating repeated context queries about current work.
+- **Agent Accountability Loop** — A requirement for agents to flag when users ignore useful output, tune their own work to be more actionable, and hold users accountable for acting on valuable deliverables, preventing unused AI output ("output graveyard").
+- **Dual Voice Mode** — An agent configuration with separate tones for private interactions (casual, unfiltered) and public content (polished, builder-focused), avoiding mismatched communication styles.
+
+> [Source](https://x.com/tonysimons_/status/2051473178682118241)
+
+</details>
+
+<details>
+<summary>Key Concept 6 — 99% of Hermes Agent Users Have Never Touched These 15 Features</summary>
+
+- **Persistent Agent Memory** — Agents maintain persistent `MEMORY.md` (project notebook) and `USER.md` (user profile) files, indexed with FTS5 and LLM summarizer, read at every session start to preserve context across sessions without re-explaining prior context.
+- **Session Branching** — Agent feature allowing forking a session like a git commit via `/branch` or `/fork` commands, enabling testing of risky paths without losing original conversation context.
+- **Session Rollback** — Agent capability to save full state via `/snapshot` commands for later restoration, or rollback filesystem changes made by the agent during a session via `/rollback`.
+- **Mid-Flight Steering** — Adjusting agent behavior mid-session (e.g., correcting tool targets, queuing next turns) without terminating the session, preserving warm context caches, via `/steer` and `/queue` commands.
+- **Provider-Agnostic Agent** — Agent architecture that supports swapping between multiple LLM providers (Anthropic, OpenAI, OpenRouter, NVIDIA NIM, etc.) mid-session without restarting, avoiding vendor lock-in.
+- **Auxiliary Model Routing** — Assigning different agent sub-tasks (context compression, session summarization, title generation, vision processing) to separate, task-optimized models to reduce cost and improve performance.
+- **Multi-Platform Agent Gateway** — Single agent process that operates across 17+ messaging platforms (Telegram, Discord, Slack, WhatsApp, Signal, etc.) simultaneously.
+
+> [Source](https://x.com/shmidtqq/status/2051307460208578864)
+
+</details>
+
+<details>
+<summary>Key Concept 7 — 10 Principles for Agent-Native CLIs</summary>
+
+- **Agent-Native CLI** — A command-line interface designed specifically for AI agent interaction, optimized to reduce token usage, minimize retries, and eliminate failure modes common with traditional human-centric CLIs.
+- **Tier 1: Table Stakes (Agent CLI Design)** — Foundational principles that prevent agents from breaking: (1) Non-interactive by default with standardized prompt-bypass flags, (2) Structured parseable output via consistent --json flag with stdout/stderr separation, (3) Actionable enumerated errors that include valid value sets, (4) Safe retriable mutations with idempotency and --dry-run support, (5) Bounded responses at both runtime and MCP description layers.
+- **Tier 2: Compounding (Agent CLI Design)** — Advanced principles that increase CLI utility as agent usage scales: (6) Cross-CLI vocabulary consistency enforced at schema/codegen layer, (7) Persistent agent identity support across sessions, (8) Async workflow support with durable job state for submit-poll-collect arcs, (9) Artifact routing to webhooks/storage endpoints, (10) Friction feedback loops for maintainers.
+- **Non-interactive by default** — CLI commands must run without prompts in agent contexts; use --force/--yes for destructive operations, honest TTY detection, and structured input via flags rather than interactive menus.
+- **Structured, parseable output** — Consistent --json flag on all data-returning commands; exit code 0 for success with stable taxonomy for failures; results to stdout, diagnostics to stderr; ANSI suppressed for non-terminals.
+- **Cross-CLI vocabulary consistency** — Use community-standard verbs (get not info, list not ls) and flags (--force not --skip-confirmations) enforced mechanically at schema layer; Cloudflare's approach: "manually enforcing consistency through reviews is Swiss cheese."
+- **Bounded responses (MCP layer)** — MCP tool descriptions must be concise (e.g., Cloudflare serves 3000 operations in <1000 tokens); each tool description should fit in a tweet to minimize agent token costs on every call.
+
+> [Source](https://x.com/trevin/status/2051316002730991795)
+
+</details>
+
+<details>
+<summary>Key Concept 8 — What I Use Hermes Agent For (And How I Use It)</summary>
+
+- **Multi-agent crew**: Running multiple specialized agents with distinct roles (researcher, executor, lifestyle manager) rather than a single general-purpose agent, each configured with different models/providers and accessible via TUI or Telegram.
+- **Agent profiling**: Configuring per-agent profiles with different LLM providers/models in Hermes, switchable via TUI, enabling side-by-side model comparison within the same agent framework.
+- **Agent use case identification**: Systematic methodology: (1) audit daily tasks for a week, (2) identify time-consuming/low-value tasks, (3) identify "softer" life friction points (forgetfulness, health reminders), (4) start with life/workflow friction points rather than technology first.
+- **Tech Research Agent**: Specialized for research briefs with citations (e.g., learning model quantization); currently uses MiniMax M2.7 via Nous Portal; citations are critical for verifying source material.
+- **Lifestyle Agent**: Agent for human life friction points—reminders for hydration, posture checks, movement breaks; runs on free NVIDIA Nemotron 3 Super via OpenRouter; demonstrates agent value beyond technical tasks.
+- **Local LLM Agent**: Agent running on consumer hardware (8GB RTX 4070) using Qwen 3.5 9B quant with 64k context; used for health research (MCAS/food allergies) and meal planning.
+
+> [Source](https://x.com/vmiss33/status/2050984556790939731)
+
+</details>
+
+<details>
+<summary>Key Concept 9 — Mercury: The AI Agent We All Wanted - Where Control, Permissions, and Autonomy Finally Got Real</summary>
+
+- **Permission-hardened agent architecture** — Security approach where read/write access is explicitly scoped to specific folders, destructive commands (e.g., `sudo`, `rm -rf /`) are hard-blocked at the execution layer, and third-party skills only receive elevated access through explicitly defined granular tools.
+- **Token budget discipline** — Enforcing a daily token limit with automatic context tightening (Auto-Concise mode) when 70% of budget is reached, preventing silent context-window bloat and uncontrolled API costs in agent operations.
+- **Agent soul system (four-file system)** — Plain-text, version-controlled identity system using `soul.md` (core reasoning), `persona.md` (response tone), `taste.md` (user preferences), and `heartbeat.md` (operational rules), replacing opaque SQLite memory or scattered skill files.
+- **Background-native agent daemon** — Zero-dependency agent runtime that installs as a system service across macOS, Linux, and Windows, auto-starting on login and auto-restarting on crash, eliminating infrastructure management overhead.
+
+> [Source](https://x.com/Ctrl_Alt_Zaid/status/2046902326657749114)
+
+</details>
+
+<details>
+<summary>Key Concept 10 — Hermes Kanban Turns Multi-Agent Work Into a Real Board</summary>
+
+- **Hermes Kanban**: A durable, SQLite-backed coordination layer for multi-agent work that persists all task state (tasks, runs, comments, dependencies, handoffs) outside individual agent context windows, enabling workflows to survive crashes, retries, context compression, and human intervention.
+- **Named agent profiles**: Persistent agent identities with dedicated memory, skills, toolsets, logs, and operating context, assigned to Kanban tasks (as opposed to anonymous, disposable subagent calls). Workers spawned from profiles retain their identity across retries and restarts.
+- **Kanban task state machine**: A formal workflow for agent tasks with statuses: `triage` (raw ideas), `todo` (waiting on dependencies), `ready` (runnable), `running` (claimed by worker), `blocked` (requires human input), `done` (completed), `archived` (old tasks). Governs task lifecycle across dependencies and retries.
+- **Task dependency automatic promotion**: Child tasks linked to parent tasks remain in `todo` status until all parents are marked `done`, at which point they are automatically promoted to `ready`. Enables multi-step agent pipelines (e.g., specifier → implementer → reviewer) without parent agent babysitting.
+- **Stateful agent retry**: Each worker attempt on a task is stored as a `run` record. Subsequent retries inherit full context of prior attempts (e.g., block reasons, failure errors) to avoid repeating failed paths.
+- **Agent crash recovery**: The Kanban dispatcher detects dead worker processes, releases task claims, and requeues tasks to `ready` status. Circuit breakers auto-block tasks that repeatedly fail to spawn (e.g., missing credentials, broken profiles) to prevent infinite retry loops.
+- **`delegate_task` vs Kanban**: `delegate_task` is a short synchronous function call for fork-and-join subagent work where the parent needs a quick answer. Kanban is a durable work queue plus state machine for workflows requiring persistence, retry, visibility, human input, or multi-role coordination over time.
+
+> [Source](https://x.com/NeoAIForecast/status/2051443615768228062)
+
+</details>
+
+<details>
+<summary>Key Concept 11 — How Agents Manage Other Agents: Four Subagents Patterns in 2026</summary>
+
+- **Inline Tool Subagent Pattern** — A pattern where the main agent calls a tool (e.g., `call_agent`) that spawns a subagent and returns the result, treating the subagent as a standard function call. Supports sync (blocks until result) and async (returns ID immediately, result injected later as notification) modes. Best for self-contained, single-step tasks like code reviews or research lookups.
+- **Fan-Out Subagent Pattern** — Uses separate `spawn_agent` (returns subagent ID immediately) and `wait_agent` (blocks until results are ready) tools to dispatch multiple independent subagents concurrently. The main agent controls interleaving of spawning, other tasks, and waiting, enabling parallel execution of unrelated tasks.
+- **Agent Pool Pattern** — Manages long-lived, stateful subagents via messaging tools (`send_message`, `list_agents`, `kill_agent`) alongside `spawn_agent` and `wait_agent`. Subagents retain full conversation history, supporting multi-step workflows where the main agent routes information between specialists over multiple interactions.
+- **Teams Subagent Pattern** — Enables direct inter-agent coordination via cross-agent messaging or shared mailboxes. The main agent sets up the team, kicks off work, and steps back, only waiting for the final report or periodically checking status. Subagents communicate directly without main agent mediation.
+- **Sync Subagent Call** — Inline Tool pattern mode where the `call_agent` tool blocks until the subagent finishes, returning the result directly in the tool response.
+- **Async Subagent Call** — Inline Tool pattern mode where the `call_agent` tool returns a subagent ID immediately, with the result injected later as a notification message to the main agent.
+
+> [Source](https://x.com/_philschmid/status/2051674663965606052)
+
+</details>
+
+<details>
+<summary>Key Concept 12 — Building a Virtual Filesystem for Mintlify's AI Assistant</summary>
+
+- **Filesystem as agent interface**: Agents can explore documentation or codebases using standard UNIX commands (grep, cat, ls, find) when content is structured as a filesystem (each doc page as a file, section as a directory). This enables multi-step exploration and exact syntax retrieval that traditional single-shot RAG cannot support.
+- **ChromaFs**: A virtual filesystem built by Mintlify for their AI documentation assistant, intercepting UNIX commands and translating them into queries against a Chroma vector database. It reduces session creation time from ~46 seconds (sandbox-based approach) to ~100 milliseconds, with zero marginal per-conversation compute cost. Built on top of just-bash, a TypeScript reimplementation of bash.
+- **Stateless read-only agent filesystem**: A virtual filesystem design that enforces read-only access (all write operations throw EROFS errors), making agent sessions stateless with no cleanup required and eliminating risk of cross-session data corruption.
+
+> [Source](https://x.com/densumesh/status/2039765361533637016)
 
 </details>
 

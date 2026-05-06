@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 8
+**Resources:** 14
 
 ## Key Concepts
 
@@ -100,6 +100,81 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 - **Recursive Agent Optimization** — Tool-driven paradigm for agent harness improvement, automating trace analysis, failure diagnosis, and fix proposal to reduce reliance on manual debugging or custom benchmarks.
 
 > [Source](https://x.com/AmarSVS/status/2051470760947159197)
+
+</details>
+
+<details>
+<summary>Key Concept 9 — 10 Principles for Agent-Native CLIs</summary>
+
+- **Agent-Native CLI** — A command-line interface designed specifically for interaction with AI agents, optimized to reduce agent token usage, minimize retries, and avoid failure modes common with traditional human-centric CLIs.
+- **Tier 1 (Table Stakes) Principles for Agent-Native CLIs** — Foundational, mandatory requirements that prevent agents from breaking, including: non-interactive operation by default, structured parseable output, actionable enumerated errors, safe retriable mutations with explicit boundaries, and bounded response sizes across all layers (runtime output and MCP description surfaces).
+- **Tier 2 (Compounding) Principles for Agent-Native CLIs** — Advanced requirements that increase CLI utility as agent usage scales, including cross-CLI vocabulary consistency, support for persistent agent identity, async workflow handling, artifact routing, and maintainer feedback loops for agent friction points.
+- **Non-interactive by default (CLI design principle)** — CLI commands must run without interactive prompts when invoked by agents, using standardized flags (e.g., --force, --yes) to bypass confirmations, honest TTY detection to treat non-TTY environments as headless, and structured input via flags/files instead of interactive menus.
+- **Structured, parseable output (CLI design principle)** — All data-returning commands must support a consistent flag (e.g., --json) to return machine-readable output to stdout, route errors to stderr, use a stable exit code taxonomy, and suppress ANSI formatting for non-terminal output.
+- **Actionable enumerated errors (CLI design principle)** — CLI errors must include the valid set of values when input fails against an enum or schema, provide correct invocation syntax, and offer concrete guidance instead of vague messages or stack traces, enabling agents to self-correct in a single retry.
+- **Safe retries and explicit mutation boundaries (CLI design principle)** — Mutation operations must be idempotent (using natural keys or idempotency tokens), include --dry-run flags for destructive actions, return resource identifiers on completion, and maintain durable job state for async operations to avoid duplicate work on retry.
+- **Bounded responses (CLI design principle)** — Commands must default to narrow output via pagination, filtering, and limits, include truncation hints to guide agents in narrowing queries, and keep MCP tool description surfaces concise (e.g., Cloudflare's 3000-operation MCP fits in under 1000 tokens) to minimize agent token costs.
+- **Cross-CLI vocabulary consistency (CLI design principle)** — CLIs must use community-standard verbs (e.g., get instead of info, list instead of ls) and flags (e.g., --force instead of --skip-confirmations, --json instead of --format=json), enforced mechanically at the schema or codegen layer to avoid agents relearning per tool.
+
+> [Source](https://x.com/trevin/status/2051316002730991795)
+
+</details>
+
+<details>
+<summary>Key Concept 10 — 99% of Hermes Agent Users Have Never Touched These 15 Features</summary>
+
+- **Custom Slash Commands** — Extensible AI tool feature where pre-built or user-created skills are mapped to slash commands (e.g., `/architecture-diagram`, `/codex`, `/sage`) for quick access across sessions and platforms.
+- **Ephemeral Side Queries** — AI tool feature (e.g., `/btw` command) for quick, context-aware questions that use session context but call no tools and are not persisted to long-term memory.
+- **Agent Power Toggles** — Quick command toggles (e.g., `/yolo`, `/fast`, `/reasoning`) to adjust agent behavior mid-session, such as skipping dangerous command approvals, switching to fast inference modes, or setting reasoning effort levels.
+- **Hermes Agent** — Provider-agnostic AI agent with 100+ pre-built skills, persistent memory, session branching, multi-platform support, and custom slash command extensibility. Supports 17+ messaging platforms and mid-session LLM provider swapping.
+
+> [Source](https://x.com/shmidtqq/status/2051307460208578864)
+
+</details>
+
+<details>
+<summary>Key Concept 11 — What I Use Hermes Agent For (And How I Use It)</summary>
+
+- **Cost-optimized AI tool usage**: Minimizing AI tool costs by leveraging free LLM tiers (e.g., OpenRouter free models, NVIDIA NIM free offerings), low-cost monthly subscriptions (e.g., Nous Portal $10/mo, ChatGPT Plus $20/mo) instead of high per-request API costs (e.g., Anthropic API).
+- **Local AI tool hosting**: Running LLM-powered tools on consumer-grade hardware (e.g., 8GB NVIDIA RTX 4070, 16GB M1 MacBook RAM) using quantized models and tools like llama.cpp or LMStudio for privacy and offline access.
+- **Multi-provider tool configuration**: AI tools that support connecting to multiple LLM providers (OpenRouter, Nous Portal, local endpoints, ChatGPT Plus non-API access) per agent profile, enabling flexible model selection.
+
+> [Source](https://x.com/vmiss33/status/2050984556790939731)
+
+</details>
+
+<details>
+<summary>Key Concept 12 — Mercury: The AI Agent We All Wanted - Where Control, Permissions, and Autonomy Finally Got Real</summary>
+
+- **Mercury (AI agent tool)** — Open-source, background-native AI agent orchestrator built by Cosmic Stack, designed to address common agent pain points: insecure permissions, context-window bloat, and opaque identity systems.
+- **Auto-Concise mode** — Mercury feature that automatically tightens injected context when 70% of the daily token budget is exceeded, maintaining task performance while keeping API costs flat.
+- **Four-file soul system** — Mercury's plain-text configuration system using `soul.md` (core reasoning), `persona.md` (response tone), `taste.md` (user preferences like dark UI themes), and `heartbeat.md` (operational rules), fully version-controllable via Git.
+- **Zero-dependency agent daemon** — Mercury's runtime that requires no external dependencies (e.g., Docker, VPS) and installs as a system service across macOS, Linux, and Windows, supporting one-command `mercury up` deployment.
+
+> [Source](https://x.com/Ctrl_Alt_Zaid/status/2046902326657749114)
+
+</details>
+
+<details>
+<summary>Key Concept 13 — Hermes Kanban Turns Multi-Agent Work Into a Real Board</summary>
+
+- **Hermes Kanban**: An AI agent coordination tool that provides a multi-board, SQLite-backed Kanban system for managing persistent multi-agent workflows. Features include named agent profiles, task dependencies, stateful retries, crash recovery, and human supervision interfaces.
+- **Multi-board isolation**: Support for creating per-project, per-domain, or per-client isolated Kanban boards, each with their own database, workspaces, logs, and dispatcher scope. Prevents task cross-contamination between unrelated workflows (e.g., AI news pipeline vs Minecraft server ops).
+- **Hermes gateway dispatcher**: An embedded dispatcher loop that runs inside the Hermes gateway by default, waking every 60 seconds to reclaim stale claims, detect crashed workers, promote eligible tasks, and spawn assigned agent profiles. Replaces the deprecated standalone Kanban daemon for most users.
+- **Gated Kanban toolset**: A set of agent-accessible tools (`kanban_show`, `kanban_complete`, `kanban_block`, `kanban_heartbeat`, etc.) that are only injected into a worker's model schema when the `HERMES_KANBAN_TASK` environment variable is set. Avoids schema bloat for non-Kanban Hermes sessions.
+- **Kanban human interfaces**: Three supervision interfaces for humans: (1) CLI commands (`hermes kanban list`, `unblock`, etc.), (2) in-chat slash commands (`/kanban create`, `list`, etc. with auto-subscription to task events), (3) web dashboard with drag-and-drop status changes, run history, filters, and live updates.
+
+> [Source](https://x.com/NeoAIForecast/status/2051443615768228062)
+
+</details>
+
+<details>
+<summary>Key Concept 14 — Building a Virtual Filesystem for Mintlify's AI Assistant</summary>
+
+- **ChromaFs**: A virtual filesystem tool built by Mintlify to enable instant, low-cost filesystem access for AI assistants. It intercepts UNIX commands (grep, cat, ls, find) and translates them into queries against an existing Chroma vector database, eliminating the need for high-latency, expensive sandbox environments. Session creation drops from ~46 seconds to ~100ms with zero marginal compute cost.
+- **just-bash**: A TypeScript reimplementation of bash by Vercel Labs, providing a pluggable IFileSystem interface that handles command parsing, piping, and flag logic. It is used as the foundation for ChromaFs, allowing custom filesystem implementations to focus solely on translating filesystem calls.
+
+> [Source](https://x.com/densumesh/status/2039765361533637016)
 
 </details>
 

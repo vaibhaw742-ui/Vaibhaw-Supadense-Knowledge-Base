@@ -6,7 +6,7 @@ AI research papers, publications, and academic insights.
 
 **Depth:** working
 
-**Resources:** 2
+**Resources:** 3
 
 ## Key Concepts
 
@@ -37,6 +37,17 @@ AI research papers, publications, and academic insights.
 
 </details>
 
+<details>
+<summary>Key Concept 3 — Boosting multimodal inference performance by >10% with a single Python dictionary</summary>
+
+- **Performance Profiling Methodology (Inference)** — When debugging inference performance, check host-side overhead before diving into GPU-level analysis (e.g., CUDA kernels, warp stall reasons). Tools like py-spy can sample call stacks from running Python processes with minimal overhead to generate flamegraphs identifying CPU bottlenecks.
+- **Iterative Optimization Process** — Inference performance engineering follows a "relentless grind" pattern: identify bottlenecks via profiling, hypothesize fixes, implement targeted changes (e.g., caching redundant operations), validate with flamegraphs, and measure end-to-end outcomes (throughput, latency).
+- **Host-First Debugging Principle** — The "golden rule" of inference performance: never block the GPU. When throughput plateaus below hardware capacity, investigate host-side components (schedulers, preprocessors) before optimizing GPU kernels.
+
+> [Source](https://x.com/modal/status/2051435165097091085)
+
+</details>
+
 ---
 
-_Built: 2026-05-04_
+_Built: 2026-05-05_

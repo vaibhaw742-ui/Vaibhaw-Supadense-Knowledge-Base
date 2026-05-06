@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 5
+**Resources:** 9
 
 ## Key Concepts
 
@@ -60,6 +60,44 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 - **Recursive Agent Optimization** — Validated paradigm where AI systems improve other AI systems, with diagnostic value comparable to an athlete reviewing game footage post-match.
 
 > [Source](https://x.com/AmarSVS/status/2051470760947159197)
+
+</details>
+
+<details>
+<summary>Key Concept 6 — What I Use Hermes Agent For (And How I Use It)</summary>
+
+- **Hermes Agent**: A multi-agent AI framework with TUI and Telegram interfaces, supporting configurable agent profiles with different LLM providers/models (OpenRouter, Nous Portal, local endpoints, ChatGPT Plus). Users run specialized agent crews (research, task execution, lifestyle) rather than a single general-purpose agent.
+- **Cost-conscious tool strategy**: Avoiding high per-request API costs (e.g., Anthropic) by combining free tiers (OpenRouter 1,000 req/day with $10 credit, NVIDIA NIM free models), low-cost subscriptions (Nous Portal $10/mo, ChatGPT Plus $20/mo non-API access), and local inference on consumer hardware.
+- **Agent use case methodology**: Identify value by auditing daily tasks for a week, finding time-consuming/low-value work and life friction points (forgetfulness, health reminders), then building agents around those specific needs rather than starting with technology.
+
+> [Source](https://x.com/vmiss33/status/2050984556790939731)
+
+</details>
+
+<details>
+<summary>Key Concept 7 — Mercury: The AI Agent We All Wanted - Where Control, Permissions, and Autonomy Finally Got Real</summary>
+
+- **Mercury** — Open-source, background-native AI agent orchestrator by Cosmic Stack that addresses three core agent problems: (1) insecure permissions with unvetted third-party skills, (2) context-window bloat causing uncontrolled API costs, and (3) opaque identity systems buried in SQLite blobs. Features include permission-hardened architecture (scoped folder access, hard-blocked destructive commands), token discipline (400 tokens of core persona per request, daily budget with Auto-Concise mode), a four-file soul system (`soul.md`, `persona.md`, `taste.md`, `heartbeat.md`) for version-controlled identity, and zero-dependency daemon operation across macOS, Linux, and Windows.
+
+> [Source](https://x.com/Ctrl_Alt_Zaid/status/2046902326657749114)
+
+</details>
+
+<details>
+<summary>Key Concept 8 — Hermes Kanban Turns Multi-Agent Work Into a Real Board</summary>
+
+- **Hermes Kanban**: An AI tool for coordinating multi-agent workflows, providing a durable Kanban board system with persistent task state, named agent profiles, and human supervision interfaces to manage long-running, complex agent work.
+
+> [Source](https://x.com/NeoAIForecast/status/2051443615768228062)
+
+</details>
+
+<details>
+<summary>Key Concept 9 — Building a Virtual Filesystem for Mintlify's AI Assistant</summary>
+
+- **ChromaFs**: A virtual filesystem tool for AI agents that replaces sandbox-based filesystem access with a Chroma vector database-backed interface. Reduces latency from 46 seconds to 100ms, eliminates per-session infrastructure costs, and includes built-in RBAC via file tree pruning.
+
+> [Source](https://x.com/densumesh/status/2039765361533637016)
 
 </details>
 

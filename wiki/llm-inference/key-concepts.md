@@ -4,7 +4,7 @@
 
 **Depth:** working
 
-**Resources:** 3
+**Resources:** 7
 
 ## Key Concepts
 
@@ -40,6 +40,57 @@ Key serving infrastructure considerations for agent workloads:
 - **Multi-model inference**: Using multiple LLM providers/models in a single workflow, optimizing for cost and performance by routing tasks to the best-fit model rather than defaulting to a single frontier model for all tasks.
 
 > [Source](https://x.com/augmentcode/status/2051350118360891584)
+
+</details>
+
+<details>
+<summary>Key Concept 4 — 99% of Hermes Agent Users Have Never Touched These 15 Features</summary>
+
+- **Mid-Session Model Swapping** — Switching the active LLM provider/model mid-session without restarting the agent, preserving all existing conversation state and context. Supports providers including Anthropic, OpenAI, OpenRouter, NVIDIA NIM, Gemini, and others.
+- **Auxiliary Model Routing** — Routing non-core LLM tasks (context compression, session summarization, title generation, vision processing) to separate, task-optimized models to reduce inference costs and improve performance. For example, using a lightweight model for title generation instead of a high-cost frontier model.
+- **Fast Inference Toggles** — Quick commands (e.g., `/fast`) to switch to priority or fast inference modes (e.g., OpenAI Priority, Anthropic Fast Mode) mid-session to reduce latency for time-sensitive tasks.
+
+> [Source](https://x.com/shmidtqq/status/2051307460208578864)
+
+</details>
+
+<details>
+<summary>Key Concept 5 — What I Use Hermes Agent For (And How I Use It)</summary>
+
+- **Consumer-grade local inference**: Running 9B quantized models (Qwen 3.5 9B) with 64k context on 8GB VRAM (RTX 4070) or 16GB RAM (M1 MacBook) via llama.cpp, challenging the assumption that local LLMs require high-end hardware.
+- **Multi-provider inference strategy**: Leveraging multiple LLM providers (OpenRouter free tier, Nous Portal $10/mo API, NVIDIA NIM free, DeepSeek API, ChatGPT Plus $20/mo non-API) to minimize costs while maintaining capability.
+- **OpenRouter free tier optimization**: Adding $10 credits unlocks 1,000 requests/day (vs 50/day free); NVIDIA Nemotron 3 Super 120B-A12B highlighted as capable free model option.
+- **Non-API LLM access**: Using ChatGPT Plus subscription to access GPT-5.5 through Hermes, avoiding per-request API costs while maintaining high capability for task execution.
+- **Local model serving**: Using llama.cpp to serve local models with extended context (64k) on consumer hardware, accessible to agents over wireless network.
+
+> [Source](https://x.com/vmiss33/status/2050984556790939731)
+
+</details>
+
+<details>
+<summary>Key Concept 6 — Boosting multimodal inference performance by >10% with a single Python dictionary</summary>
+
+- **Host Overhead** — Time spent in host-side (CPU) inference components like schedulers, which stalls GPU work submission; a critical bottleneck for multimodal inference workloads where schedulers are single-threaded.
+- **SGLang Scheduler** — Single-threaded host-side loop in the SGLang inference engine that gates GPU work submission; processes incoming requests, forms batches, and dispatches them to the GPU.
+- **CUDA IPC (Interprocess Communication)** — CUDA mechanism for sharing GPU tensors between processes without memory copies, used by SGLang to transfer preprocessed tensors from tokenizer workers to the scheduler.
+- **CUDA IPC Pool Handle Cache** — Simple Python dictionary cache implemented in SGLang v0.5.10 to store reusable CUDA IPC memory pool handles, eliminating repeated `_new_shared_cuda` calls that caused ~3% of scheduler runtime overhead.
+- **Mixed-Chunk Scheduling** — Scheduling strategy allowing prefill and decode tokens to share a single batch; delays in prefill input processing (e.g., multimodal feature hashing) also slow decode operations.
+- **process_input_requests** — SGLang scheduler function responsible for preparing incoming multimodal requests for batching; previously consumed ~13% of scheduler CPU time due to redundant CUDA IPC handle lookups.
+- **hash_feature** — SGLang function that maps input images to hash-based IDs for efficient KV cache lookups, part of the multimodal input processing path that required shared GPU memory book-keeping.
+- **py-spy** — Low-overhead sampling profiler for running Python processes, used to identify SGLang scheduler bottlenecks by generating flamegraphs of CPU time usage.
+
+> [Source](https://x.com/modal/status/2051435165097091085)
+
+</details>
+
+<details>
+<summary>Key Concept 7 — Causal Masking in Attention</summary>
+
+- **Causal Masking** — A mechanism in Transformer attention layers that restricts each token to attending only to itself and past tokens, never future ones. Critical for autoregressive inference, where tokens are generated sequentially and future tokens do not exist, preventing invalid attention to non-existent context.
+- **Causal Mask Matrix** — Binary matrix applied to attention score matrices during inference, with 0s in upper triangular positions (future tokens) set to −∞ before softmax to zero out attention to invalid positions. Ensures inference behavior matches training conditions.
+- **Attention Score Matrix** — A 2D matrix generated in attention layers where rows represent query tokens and columns represent key tokens. Each value indicates the raw relevance score between a query-key token pair before normalization or softmax is applied.
+
+> [Source](https://x.com/amitiitbhu/status/2038572952648815008)
 
 </details>
 

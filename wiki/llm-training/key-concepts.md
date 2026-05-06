@@ -4,7 +4,7 @@
 
 **Depth:** working
 
-**Resources:** 1
+**Resources:** 2
 
 ## Key Concepts
 
@@ -29,6 +29,18 @@
 
 </details>
 
+<details>
+<summary>Key Concept 2 — Causal Masking in Attention</summary>
+
+- **Causal Masking** — A mechanism applied in Transformer attention layers to block access to future tokens, ensuring each token attends only to itself and past tokens. Prevents information leakage during training, where seeing future tokens would allow models to use target tokens as inputs (cheating), and aligns training conditions with inference (where future tokens do not exist).
+- **Causal Mask Matrix** — A binary matrix (1 = attention allowed, 0 = blocked) matching the dimensions of the attention score matrix. For causal masking, the upper triangle (future positions relative to each query token) is set to 0. Blocked positions are set to −∞ before softmax, which maps to 0 after softmax, eliminating attention to future tokens.
+- **Attention Score Matrix** — A 2D matrix generated in attention layers where rows represent query tokens and columns represent key tokens. Each value indicates the raw relevance score between a query-key token pair before normalization or softmax is applied.
+- **Information Leakage (Language Modeling)** — A failure mode where models access future tokens during training, allowing them to learn shortcuts using target tokens as input. This produces unrealistically high training performance but breaks the core language modeling assumption of predicting next tokens using only past context, causing failure during step-by-step inference.
+
+> [Source](https://x.com/amitiitbhu/status/2038572952648815008)
+
+</details>
+
 ---
 
-_Built: 2026-05-04_
+_Built: 2026-05-05_
