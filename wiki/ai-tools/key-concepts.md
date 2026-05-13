@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 14
+**Resources:** 17
 
 ## Key Concepts
 
@@ -178,6 +178,42 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 </details>
 
+<details>
+<summary>Key Concept 15 — How to Build a Self-Improving AI Lead Gen Agent on Hermes</summary>
+
+- **Modular agent tool stack** — A design principle for AI agent systems where individual tools (signal monitors, enrichment providers, LLMs, CRMs) are interchangeable without disrupting core workflows, as the architecture is built on reusable patterns rather than vendor-locked tooling. Validated by the resource's example of swapping Trigify for alternative signal tools or Instantly for alternative outreach tools without breaking the agent's lead gen workflow.
+- **Lead enrichment layer** — A component of AI SDR agent workflows that uses parallel third-party data providers (e.g., Lead Magic, Surfe) to gather additional company and contact context for qualified leads, with multiple providers used to leverage different scale-specific data strengths.
+- **Signal monitoring layer** — A tool layer that ingests external intent signals (social media trends, funding announcements, role/company changes across X, LinkedIn, YouTube, Substack, Hacker News) and internal operational signals (sales call transcripts via Fireflies, team call notes via Granola, Slack conversations, Stripe transaction data) to feed agent content engines and prospecting workflows.
+
+> [Source](https://x.com/MichLieben/status/2051707320699396454)
+
+</details>
+
+<details>
+<summary>Key Concept 16 — AI Agents That Builds Themselves</summary>
+
+- **Iris** — CrewAI's internal AI employee, a Slack-native agent that lives in threads, writes real code, files pull requests, reviews teammates' work, and has persistent cross-conversation memory. Built entirely on CrewAI (Flows for deterministic routing, Agents for reasoning, Crews for multi-agent collaboration, Memory for learning). It can fully modify itself, onboard itself to new tools, and change its own code. In production for months at CrewAI, roughly one in four PRs across all CrewAI repositories now originates from Iris, and the Iris repo is entirely AI-built as a testbed for self-improving agent concepts before they are incorporated back into CrewAI.
+
+> [Source](https://x.com/joaomdmoura/status/2049562041007194275)
+
+</details>
+
+<details>
+<summary>Key Concept 17 — Agent Platform That Builds Itself</summary>
+
+- **Agno OS**: An open-source agent platform that can be run locally via Docker or deployed to production (e.g., Railway) with one command. Comprises 5 core components: Runtime, Storage, Connectors, Interfaces, and Infrastructure.
+
+- **Claude Code**: A coding agent used to manage the entire agent development lifecycle (create, improve, extend, hill climb, review) through natural language prompts. It can:
+  - Scaffold agents by asking requirements, researching toolkits via MCP, generating code
+  - Derive and run probes against live agents, then fix failures
+  - Add capabilities with human guidance
+  - Run eval suites and perform hill climbing
+  - Detect and fix drift between docs, code, and config
+
+> [Source](https://x.com/ashpreetbedi/status/2054222428025614829?s=20)
+
+</details>
+
 ---
 
-_Built: 2026-05-05_
+_Built: 2026-05-13_

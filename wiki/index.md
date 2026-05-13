@@ -26,6 +26,10 @@ AI research papers, publications, and academic insights.
 
 Classical machine learning algorithms and techniques before the deep learning era.
 
+### [ML System Design](ml-system-design.md) _(working)_
+
+building ML pipeline end to end at production with data + feature engineering + training + inference etc
+
 ---
 
-_Built: 2026-05-05_
+_Built: 2026-05-13_

@@ -6,7 +6,7 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 **Depth:** working
 
-**Resources:** 9
+**Resources:** 10
 
 ## Key Concepts
 
@@ -101,6 +101,17 @@ Useful AI tools, libraries, and platforms for building and using AI systems.
 
 </details>
 
+<details>
+<summary>Key Concept 10 — AI Agents That Builds Themselves</summary>
+
+- **Iris (CrewAI)** — A production AI agent that validates the "entangled agents" thesis: agents improve measurably over time by accumulating canonical memory (via a nightly dreaming cycle), creating skills from observed behavioral patterns, and encoding repeated multi-tool sequences as deterministic Flows. Built as CrewAI's internal Slack-native AI employee. Key architectural components: (1) CrewAI Flows for deterministic routing, (2) multi-agent Crews for collaboration, (3) canonical memory extracted nightly via clustering/deduplication of conversations, (4) autonomous proposal of skills and flows based on detected patterns. Production outcomes: hundreds of merged PRs across CrewAI repos, ~25% of all organizational PRs from AI, humans redirected to architecture and design work.
+
+- **Production lessons from Iris** (from CrewAI's experience running a self-improving agent): Agents need lightweight execution paths; not every task needs full orchestration; memory must understand conversations not just results; agents should use Flows as capabilities (delegating to encoded processes instead of reasoning from scratch); memory ages and agents need to know it; every decision needs a provenance trail. The "Done" lie (sandbox reliability issues) can erode trust faster than with humans, and earning it back is harder than earning it the first time.
+
+> [Source](https://x.com/joaomdmoura/status/2049562041007194275)
+
+</details>
+
 ---
 
-_Built: 2026-05-05_
+_Built: 2026-05-13_

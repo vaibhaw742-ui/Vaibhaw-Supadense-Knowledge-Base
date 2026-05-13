@@ -4,7 +4,7 @@
 
 **Depth:** working
 
-**Resources:** 7
+**Resources:** 8
 
 ## Key Concepts
 
@@ -94,6 +94,25 @@ Key serving infrastructure considerations for agent workloads:
 
 </details>
 
+<details>
+<summary>Key Concept 8 — LLM Inference Optimization</summary>
+
+- **KV Cache** — Stores the Key (K) and Value (V) matrices computed at each decoding step, so that every new token only computes attention against the cached keys/values rather than recomputing them for the full sequence. This reduces per-token attention complexity from O(n²) to O(n) and is the foundation of efficient autoregressive inference in Transformers.
+
+- **Paged Attention** — A memory management technique that eliminates KV Cache fragmentation by allocating fixed-size "pages" (blocks) of memory, similar to virtual memory paging in operating systems. This allows non-contiguous storage of KV Cache blocks, dramatically reducing wasted memory and enabling LLM servers to serve many more concurrent users.
+
+- **Flash Attention** — An IO-aware attention algorithm that tiles the attention computation into small blocks that fit in fast GPU on-chip SRAM instead of slow HBM. Uses online softmax to avoid materializing the full N×N attention matrix, and recomputes attention in the backward pass to save memory bandwidth. Achieves 2–4× speedup over standard attention and is used in virtually every modern LLM training and inference pipeline (Flash Attention 2 and 3 introduce further optimizations).
+
+- **Grouped-Query Attention (GQA)** — An attention variant where multiple query heads share a single key-value head group (e.g., 2:1 or 8:1 ratio), reducing the memory footprint of KV Cache during inference. Generalizes Multi-Head Attention (MHA, where G=H, each query head has its own KV head) and Multi-Query Attention (MQA, where G=1, all queries share one KV head). Used in production by models like Llama 2 70B, PaLM, and others.
+
+- **Speculative Decoding** — A two-model inference strategy where a small, fast "draft" model proposes multiple candidate tokens in a single forward pass, and a large "target" model verifies them in parallel using rejection sampling. Guarantees identical output distribution to the target model alone while achieving 2–3× wall-clock speedup in production (used by TGI, vLLM, TensorRT-LLM, and others).
+
+- **Continuous Batching** — A serving technique where the inference engine dynamically adds new sequences to the GPU batch and evicts completed ones at every single generation step (instead of waiting for all sequences in a batch to finish). This keeps GPU utilization high throughout the decode phase, significantly improving overall throughput for LLM serving compared to static batching.
+
+> [Source](https://x.com/amitiitbhu/status/2054100147546837154)
+
+</details>
+
 ---
 
-_Built: 2026-05-05_
+_Built: 2026-05-13_

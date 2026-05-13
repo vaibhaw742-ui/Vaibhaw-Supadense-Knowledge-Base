@@ -22,9 +22,13 @@ Traces are not just records of what happened, and feedback is not just a rating 
 
 There are several ways that agentic systems can "learn" and improve over time. We wrote about them here:
 
-[Continual learning for AI agents](https://x.com/hwchase17/status/2040467997022884194)
+[![Harrison Chase](https://pbs.twimg.com/profile_images/1569345624935485442/R67C4wCQ_normal.jpg)](https://x.com/hwchase17) [@hwchase17](https://x.com/hwchase17) · [Apr 4](https://x.com/hwchase17/status/2040467997022884194)
 
-> Most discussions of continual learning in AI focus on one thing: updating model weights. But for AI agents, learning can happen at three distinct layers: the model, the harness, and the context....
+[![Continual learning for AI agents](https://pbs.twimg.com/media/HFEylQUaIAAA88g?format=jpg&name=small)](https://x.com/hwchase17/status/2040467997022884194)
+
+**Article:** [Continual learning for AI agents](https://x.com/hwchase17/status/2040467997022884194)
+
+Most discussions of continual learning in AI focus on one thing: updating model weights. But for AI agents, learning can happen at three distinct layers: the model, the harness, and the context....
 
 Learning can happen at the model level. You may discover examples where the model consistently misclassifies a request, chooses the wrong tool, or fails to follow a policy. Those traces can be used to update the model weights themselves, via SFT or RL.
 
@@ -34,7 +38,7 @@ Learning can also happen at the context level. Agents are extremely sensitive to
 
 The important point is that all of these learning loops are powered by traces. If you do not know what the agent saw, what it did, and what happened next, you cannot reliably know what to improve.
 
-[![Agent evaluation image](https://pbs.twimg.com/media/HHfdd0eaEAAU5f2?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351659662675968)
+[![Traces and feedback](https://pbs.twimg.com/media/HHfdd0eaEAAU5f2?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351659662675968)
 
 This is why [agent observability powers agent evaluation](https://blog.langchain.com/agent-observability-powers-agent-evaluation/). The trace is where agent behavior becomes visible.
 
@@ -70,9 +74,9 @@ This is the core requirement: store feedback with your agent observability data.
 
 ## Feedback can come from many places
 
-[![Feedback image](https://pbs.twimg.com/media/HHfdn8Da0AAhKTQ?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351833495654400)
-
 Feedback does not have to mean a human manually grading every trace. In practice, useful feedback comes in several forms.
+
+[![Feedback sources](https://pbs.twimg.com/media/HHfdn8Da0AAhKTQ?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351833495654400)
 
 The most obvious is direct user feedback: thumbs up, thumbs down, a star rating, or a written correction. This signal is easy to understand, but it is usually sparse. Most users do not leave explicit feedback.
 
@@ -92,7 +96,7 @@ From an engineering standpoint, the pattern is instructive. Not every feedback s
 
 ## What your observability platform needs
 
-[![Observability platform image](https://pbs.twimg.com/media/HHfdkaua8AAGE95?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351773009604608)
+[![Observability platform](https://pbs.twimg.com/media/HHfdkaua8AAGE95?format=jpg&name=small)](https://x.com/hwchase17/article/2051708710859501807/media/2051351773009604608)
 
 If observability is going to power learning, the platform needs three things.
 

@@ -4,7 +4,7 @@
 
 **Depth:** deep
 
-**Resources:** 23
+**Resources:** 27
 
 ## Key Concepts
 
@@ -371,6 +371,74 @@ _Architectures where multiple specialized agents collaborate with distinct roles
 
 </details>
 
+<details>
+<summary>Key Concept 13 — Agent observability needs feedback to power learning</summary>
+
+- **Agent Observability** — Beyond debugging, observability serves as the foundation for agent learning by capturing traces (what happened) and pairing them with feedback (whether it was good) to improve the system.
+- **Three-Level Agent Learning** — Agents can learn at three distinct layers:
+  - **Model level**: Update model weights via SFT or RL using traces where the model misclassifies, chooses wrong tools, or fails policy adherence.
+  - **Harness level**: Improve everything around the model—prompts, tool schemas, permission checks, control flow, memory logic, routing, retries, guardrails—when traces show the model was capable but scaffolding was wrong.
+  - **Context level**: Improve retrieved docs, memory, user preferences, tool results, and environment state when the model made reasonable decisions given bad/missing context (often called memory improvement).
+- **Traces + Feedback Loop** — Traces alone are necessary but not sufficient; feedback (success/failure signals) must be attached to traces to enable learning. Feedback turns observability from passive records into training, debugging, product, and evaluation signals.
+- **Hand-Driven vs Automated Learning** — Learning can be manual (developer inspects trace, updates prompt) or automated (system samples traces, runs online evals, detects failure patterns, triggers review queues). Both are powered by traces.
+- **Agent vs Traditional Software Observability** — Unlike traditional software where user feedback can be separate, agents require feedback to be closely linked to observability data since the learning loop depends on knowing both what happened and whether it was good.
+
+> [Source](https://x.com/hwchase17/status/2051708710859501807)
+
+</details>
+
+<details>
+<summary>Key Concept 14 — How to Build a Self-Improving AI Lead Gen Agent on Hermes</summary>
+
+- **Wikipedia-style agent memory graph** — A non-hierarchical memory structure for AI agents where each concept is stored as a standalone markdown file (node) and relationships between concepts are explicit links (edges), mimicking Wikipedia or Obsidian linking. Replaces hierarchical folder-based memory to allow context retrieval across multiple domains, as agents traverse the graph to gather related context before responding.
+- **Self-learning agent loop** — A closed-loop agent architecture that runs scheduled jobs over performance data (content engagement, reply rates, meeting bookings), generates hypotheses from repeated patterns, runs controlled experiments, logs outcomes, and updates version-controlled beliefs only when patterns cross a validation threshold (avoiding single-fluke updates). Requires human approval for applied changes.
+- **Signal-based agent prospecting** — A lead generation approach for agents that ingests external signals (social trends, funding announcements, role/company changes) and internal signals (sales call transcripts, Stripe transaction data, Slack conversations) to qualify leads against an agent-generated ideal customer profile (ICP), enrich lead data, and personalize outreach using the agent's memory graph.
+- **AI SDR agent** — A sales-focused AI agent that automates end-to-end lead pipeline workflows: signal-driven qualification, multi-provider data enrichment, personalized messaging composed using agent memory, and outcome feedback (replies, meetings, deals) that updates the agent's beliefs to improve future performance.
+- **Hermes agent harness** — An orchestration layer for AI agent systems that manages Wikipedia-style memory graphs, automates creation/updating of skills and memory files based on usage, schedules cron jobs for self-learning loops, and integrates external tools, handling ~90% of core agent workflow execution.
+
+> [Source](https://x.com/MichLieben/status/2051707320699396454)
+
+</details>
+
+<details>
+<summary>Key Concept 15 — AI Agents That Builds Themselves</summary>
+
+- **Entangled Agents** — A thesis from CrewAI that the most impactful AI agents will co-evolve with the organizations they serve through a closed-loop system: usage generates conversation data, a dreaming cycle extracts canonical memory, memory enables skill and flow proposals, and those improvements make the agent more capable, producing compounding returns that no single technique achieves alone.
+
+- **Dreaming Cycle** — A nightly background process where an agent reviews its conversation history across all sessions, clusters interactions by topic, and canonicalizes stable facts into persistent memory. Enables the agent to learn which credential sources are reliable, which team members work on which repos, and which processes have edge cases — all from observing production conversations rather than explicit programming.
+
+- **Canonical Memory** — Persistent, deduplicated memory derived from clustering and consolidating raw conversation data. Unlike raw logs or simple key-value stores, canonical memory stores stable, vetted facts about the organization that survive across sessions and improve with each dreaming cycle.
+
+- **Agent Skill Creation (Self-Proposed)** — When an agent detects it keeps following the same behavioral pattern across multiple conversations (e.g., a consistent citation or look-up protocol), its dreaming cycle proposes encoding that pattern as a formal skill. The agent writes its own training material for the skill. Human review on a dashboard gates activation, making the filter as important as the generation.
+
+- **Agent Flow Creation** — When an agent detects repeated sequential patterns in tool usage (e.g., checking for stale PRs, posting a reminder at 12 hours, escalating daily until closed), it proposes encoding them as deterministic, executable workflows (CrewAI Flows). This converts ad-hoc multi-turn patterns into reliable single-call capabilities.
+
+- **Agent-Organization Co-evolution** — The operational loop validated in production at CrewAI with Iris: (1) usage generates conversation data, (2) the dreaming cycle extracts canonical memory from conversations, (3) canonical memory enables skill and flow proposals, (4) skills and flows make the agent measurably better, (5) a better agent is used more, restarting the cycle.
+
+> [Source](https://x.com/joaomdmoura/status/2049562041007194275)
+
+</details>
+
+<details>
+<summary>Key Concept 16 — Agent Platform That Builds Itself</summary>
+
+- **Agent Platform**: The service responsible for running agents in production. It handles request routing, agent loop execution, response streaming, data/metrics collection, security (unauthorized access prevention), and tenant isolation (preventing cross-agent data pollution). Think of it as an operating system for agent applications.
+
+- **Automated Agent Development Lifecycle**: A 5-step workflow managed entirely by coding agents through prompts:
+  - **Create**: Scaffolds new agents by asking requirements, researching toolkits, generating code, registering the agent, and smoke-testing
+  - **Improve**: Hardens agents by deriving probes from instructions, running them, and fixing failures
+  - **Extend**: Adds new capabilities (tools, prompt refinements, bug fixes) with human guidance
+  - **Hill Climb**: Runs full eval suite, diagnoses every failure, and fixes what's in scope automatically
+  - **Review**: Sweeps the repo for drift between docs, code, and config; fixes what it can
+
+- **Probes**: Automated test cases derived from an agent's instructions to validate behavior. Includes golden-path tests, edge cases, tool-selection tests, and adversarial tests (prompt injections, malformed input, off-purpose attempts).
+
+- **Drift (Code/Docs/Config)**: Inconsistencies between documentation, code, and configuration that naturally occur as software evolves. Can be automatically detected and fixed by coding agents.
+
+> [Source](https://x.com/ashpreetbedi/status/2054222428025614829?s=20)
+
+</details>
+
 ---
 
-_Built: 2026-05-05_
+_Built: 2026-05-13_

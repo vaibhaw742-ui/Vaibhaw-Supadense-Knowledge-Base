@@ -2,8 +2,34 @@
 
 > This file is managed by the supadense agent. Edit via chat only.
 
+## 2026-05-13
+
+- **07:10** Extracted content from 'Agent Platform That Builds Itself' by Ashpreet Bedi. Placed 3 placements across Agents, AI Tools, and ML System Design key concepts pages. Added 7 new concepts: Agent Platform, Automated Agent Development Lifecycle, Hill Climbing (Agent Improvement), Probes (Agent Testing), Drift Detection, Agno OS, and Unified Identity Resolution.
+- **07:06** Resource created (url): Agent Platform That Builds Itself
+
+## 2026-05-12
+
+- **09:51** Placed 6 LLM inference optimization techniques (KV Cache, Paged Attention, Flash Attention, GQA, Speculative Decoding, Continuous Batching) into LLM Inference > Key Concepts from Amit Shekhar's resource
+- **09:50** Resource created (url): LLM Inference Optimization
+- **05:10** Memorized "AI Agents That Builds Themselves" (CrewAI Iris) — placed 3 chunks across Agents/Key Concepts, AI Tools/Key Concepts, and AI Tools/Summary. Extracted concepts: Entangled Agents, Dreaming Cycle, Canonical Memory.
+- **05:06** Resource created (url): AI Agents That Builds Themselves
+
+## 2026-05-07
+
+- **05:11** Placed content from 'How to Build a Self-Improving AI Lead Gen Agent on Hermes' into Agents, AI Tools, and ML System Design Key Concepts sections. Upserted 11 new domain-specific concepts.
+- **05:07** Resource created (url): How to Build a Self-Improving AI Lead Gen Agent on Hermes
+
+## 2026-05-06
+
+- **17:21** Resource created (url): Agent observability needs feedback to power learning
+- **11:36** Failed to place content: Resource 01KQYGKN3V2WD6D4ZAFJ04ZPET not found in DB - foreign key constraint blocking kb_resource_place calls
+- **11:34** Resource ID 01KQYGKN3V2WD6D4ZAFJ04ZPET not found in system - cannot place content from "Agent observability needs feedback to power learning"
+- **11:31** Removed resource "Agent observability needs feedback to power learning" — 0 placements removed, no pages rebuilt
+- **11:26** Resource created (url): Agent observability needs feedback to power learning
+
 ## 2026-05-05
 
+- **17:05** Added category: ML System Design
 - **17:01** Memorized resource 'Causal Masking in Attention' into LLM Training Key Concepts and LLM Inference Key Concepts sections. Extracted 4 new concepts: Causal Masking, Causal Mask Matrix, Attention Score Matrix, Information Leakage (Language Modeling).
 - **16:59** Resource created (url): Causal Masking in Attention
 - **16:54** Memorized "Boosting multimodal inference performance by >10% with a single Python dictionary" — placed key concepts in LLM Inference and AI Research Papers categories, added 2 new concepts (Host Overhead, CUDA IPC Pool Handle Cache)
